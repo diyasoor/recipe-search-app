@@ -56,6 +56,7 @@ export const SearchBox = styled.div`
     border-radius: 5px;
     width: 30%;
     overflow: hidden;
+    margin-right: 10px;
     border: 2px solid #000814;
   }
 `;
