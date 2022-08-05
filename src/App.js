@@ -110,7 +110,7 @@ function App() {
       {/* ***********HEADER*********** */}
       <Header>
         <Name>
-          <AppLogo src={process.env.PUBLIC_URL + "/food.svg"}/> 
+          <AppLogo src="homepage/food.svg" /> 
             Recipe Search
         </Name>
         <SearchBox>
