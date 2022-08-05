@@ -1,9 +1,15 @@
 import styled from "styled-components";
 import Axios from "axios";
-import {useState} from 'react';
-import {Header, Name, AppLogo, SearchBox, SearchBoxInput} from "./components/HeaderComponent.js";
+import { useState } from 'react';
+import React from 'react';
+import {Header, Name, AppLogo, SearchBox, SearchIcon, SearchBoxInput} from "./components/HeaderComponent.js";
 import {RecipeList, RecipeImage, RecipeDetails, CaloriesIngredients, RecipeCalories, RecipeIngredients, RecipeDiet} from "./components/RecipeComponent.js";
-// import { common } from "@material-ui/core/colors";
+import {ImageIngredients, ImageDialog, TableDialog, TableData, TableHeader, DialogList, DialogListSpan} from "./components/DialogComponent.js";
+import { DialogTitle } from '@mui/material';
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+
 
 const APP_ID = "87eef540";
 const APP_KEY = "5079932337360ca1caede06e3a3a7ee9";
@@ -21,19 +27,65 @@ const RecipeContainer = styled.div`
   gap: 20px;
   justify-content: space-evenly;
 `;
+const Placeholder = styled.img`
+  opacity: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 200px;
+`;
+
 const RecipeComponent = (props) => {
   console.log("props", props);
+  const [show, setShow] = React.useState(false);
   const {recipeObj} = props;
   return (
-    <RecipeList>
-      <RecipeImage src={recipeObj.image}/>
-      <RecipeDetails>{recipeObj.label}</RecipeDetails>
-      <CaloriesIngredients>
-        <RecipeCalories>{parseInt(recipeObj.calories)} CALORIES</RecipeCalories>
-        <RecipeIngredients>{recipeObj.ingredients.length} INGREDIENTS</RecipeIngredients>
-      </CaloriesIngredients>
-      <RecipeDiet>{recipeObj.dietLabels}</RecipeDiet>
-    </RecipeList>
+    <>
+      <Dialog open={show}>
+
+        <DialogTitle id="alert-dialog-slide-title">{recipeObj.label}</DialogTitle>
+
+        <DialogContent>
+          <ImageIngredients>
+            <ImageDialog src={recipeObj.image}/>
+            <ul>
+              <DialogList><DialogListSpan>Dish Type: </DialogListSpan>{recipeObj.dishType}</DialogList>
+              <DialogList><DialogListSpan>Calories: </DialogListSpan>{parseInt(recipeObj.calories)}</DialogList>
+              <DialogList><DialogListSpan>Meal Type: </DialogListSpan>{recipeObj.mealType[0]}</DialogList> 
+              <DialogList><DialogListSpan>Cuisine Type: </DialogListSpan>{recipeObj.cuisineType}</DialogList> 
+            </ul>
+          </ImageIngredients>
+          
+          <TableDialog>
+            <thead>
+              <TableHeader>{recipeObj.ingredients.length} INGREDIENTS</TableHeader>
+            </thead>
+            <tbody>
+              {recipeObj.ingredients.map((ingredientsObj) => (
+                <tr>
+                  <TableData>{ingredientsObj.text}</TableData>
+                </tr>
+              ))}
+            </tbody>
+          </TableDialog>         
+        </DialogContent>
+
+        <DialogActions>
+          <RecipeIngredients onClick={() => window.open(recipeObj.url)}>See Full Recipe</RecipeIngredients>
+          <RecipeCalories onClick={() => setShow("")}>Close</RecipeCalories>
+        </DialogActions>
+
+      </Dialog>
+
+      <RecipeList>
+        <RecipeImage src={recipeObj.image} onClick={() => setShow(true)}/>
+        <RecipeDetails>{recipeObj.label}</RecipeDetails>
+        <CaloriesIngredients>
+          <RecipeCalories>{parseInt(recipeObj.calories)} CALORIES</RecipeCalories>
+          <RecipeIngredients>{recipeObj.ingredients.length} INGREDIENTS</RecipeIngredients>
+        </CaloriesIngredients>
+        <RecipeDiet>{recipeObj.dietLabels[0]}</RecipeDiet>
+      </RecipeList>
+    </>
   );
 };
 function App() {
@@ -62,14 +114,15 @@ function App() {
             Recipe Search
         </Name>
         <SearchBox>
+          <SearchIcon src="/search.svg" />
           <SearchBoxInput placeholder="Search" onKeyPress={(e) => handler(e)}/>
         </SearchBox>
       </Header>
       {/* ************BODY************ */}
       <RecipeContainer>
-        {recipeList.length && recipeList.map((recipeObj) => (
+        {recipeList.length ? recipeList.map((recipeObj) => (
           <RecipeComponent recipeObj={recipeObj.recipe}/>
-        ))}  
+        )): <Placeholder src="/food.svg" />}  
       </RecipeContainer>
     </Container>
   );

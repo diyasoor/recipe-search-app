@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 
 export const Header = styled.div`
@@ -32,6 +33,11 @@ export const SearchBox = styled.div`
   padding: 5px;
   border-radius: 9px;
   margin-right: 60px
+`;
+export const SearchIcon = styled.img`
+  width: 30px;
+  height: 30px;
+  margin: 0 7px;
 `;
 export const SearchBoxInput = styled.input`
   border: none;
