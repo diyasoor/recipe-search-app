@@ -114,7 +114,7 @@ function App() {
             Recipe Search
         </Name>
         <SearchBox>
-          <SearchIcon src="/search.svg" />
+          <SearchIcon src="homepage/search.svg" />
           <SearchBoxInput placeholder="Search" onKeyPress={(e) => handler(e)}/>
         </SearchBox>
       </Header>
