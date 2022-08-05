@@ -12,10 +12,10 @@ export const Header = styled.div`
 
   @media (min-width:0px) and (max-width:700px) {
     font-size: 20px;
+    padding: 15px;
   }
 `;
 export const LogoName = styled.div`
-  font-size: 40px;
   display: flex;
   align-items: center;
 `;
@@ -38,7 +38,7 @@ export const AppLogo = styled.img`
     width: 30px;
     height: 30px;
     margin-left: 20px;
-    
+    margin-right: 5px;
   }
 `;
 export const SearchBox = styled.div`
@@ -55,7 +55,8 @@ export const SearchBox = styled.div`
   @media (min-width:0px) and (max-width:700px) {
     border-radius: 5px;
     width: 30%;
-    margin-right: 10px;
+    overflow: hidden;
+    border: 2px solid #000814;
   }
 `;
 export const SearchIcon = styled.img`
@@ -64,7 +65,6 @@ export const SearchIcon = styled.img`
   margin: 0 7px;
 
   @media (min-width:0px) and (max-width:700px) {
-    
     width: 15px;
     height: 15px;
     margin: 0 4px;

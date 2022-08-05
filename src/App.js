@@ -26,6 +26,10 @@ const RecipeContainer = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-evenly;
+  @media (min-width:0px) and (max-width:700px) {
+    padding: 15px;
+    gap: 10px;
+  }
 `;
 const Placeholder = styled.img`
   opacity: 50%;
@@ -34,9 +38,9 @@ const Placeholder = styled.img`
   margin: 200px;
 
   @media (min-width:0px) and (max-width:700px) {
-    width: 80px;
-    height: 80px;
-    margin: 150px;
+    width: 50px;
+    height: 50px;
+    margin: 70px;
   }
 `;
 
