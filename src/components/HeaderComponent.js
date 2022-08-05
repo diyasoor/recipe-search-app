@@ -1,4 +1,3 @@
-
 import styled from "styled-components";
 
 export const Header = styled.div`
@@ -10,11 +9,23 @@ export const Header = styled.div`
   font-weight: bold;
   align-items: center;
   justify-content: space-between;
+
+  @media (min-width:0px) and (max-width:700px) {
+    font-size: 20px;
+  }
 `;
-export const Name = styled.div`
+export const LogoName = styled.div`
   font-size: 40px;
   display: flex;
   align-items: center;
+`;
+
+export const Name = styled.div`
+  font-size: 40px;
+  @media (min-width:0px) and (max-width:700px) {
+    font-size: 15px;
+  }
+  
 `;
 
 export const AppLogo = styled.img`
@@ -22,6 +33,13 @@ export const AppLogo = styled.img`
   height: 70px;
   margin-left: 60px;
   margin-right: 10px;
+
+  @media (min-width:0px) and (max-width:700px) {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    
+  }
 `;
 export const SearchBox = styled.div`
   display: flex;
@@ -32,12 +50,24 @@ export const SearchBox = styled.div`
   border-style: solid;
   padding: 5px;
   border-radius: 9px;
-  margin-right: 60px
+  margin-right: 60px;
+  
+  @media (min-width:0px) and (max-width:700px) {
+    margin-right: 20px;
+    border-radius: 5px;
+  }
 `;
 export const SearchIcon = styled.img`
   width: 30px;
   height: 30px;
   margin: 0 7px;
+
+  @media (min-width:0px) and (max-width:700px) {
+    
+    width: 20px;
+    height: 20px;
+    margin: 0 4px;
+  }
 `;
 export const SearchBoxInput = styled.input`
   border: none;
@@ -45,4 +75,10 @@ export const SearchBoxInput = styled.input`
   height: 30px;
   font-size: 16px;
   font-weight: bold;
+
+  @media (min-width:0px) and (max-width:700px) {
+    height: 15px;
+    font-size: 13px;
+  }
+
 `;

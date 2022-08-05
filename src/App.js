@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Axios from "axios";
 import { useState } from 'react';
 import React from 'react';
-import {Header, Name, AppLogo, SearchBox, SearchIcon, SearchBoxInput} from "./components/HeaderComponent.js";
+import {Header, LogoName, Name, AppLogo, SearchBox, SearchIcon, SearchBoxInput} from "./components/HeaderComponent.js";
 import {RecipeList, RecipeImage, RecipeDetails, CaloriesIngredients, RecipeCalories, RecipeIngredients, RecipeDiet} from "./components/RecipeComponent.js";
 import {ImageIngredients, ImageDialog, TableDialog, TableData, TableHeader, DialogList, DialogListSpan} from "./components/DialogComponent.js";
 import { DialogTitle } from '@mui/material';
@@ -32,6 +32,12 @@ const Placeholder = styled.img`
   width: 120px;
   height: 120px;
   margin: 200px;
+
+  @media (min-width:0px) and (max-width:700px) {
+    width: 80px;
+    height: 80px;
+    margin: 150px;
+  }
 `;
 
 const RecipeComponent = (props) => {
@@ -109,10 +115,10 @@ function App() {
     <Container>
       {/* ***********HEADER*********** */}
       <Header>
-        <Name>
-          <AppLogo src={process.env.PUBLIC_URL + "/food.svg"} /> 
-            Recipe Search
-        </Name>
+        <LogoName>
+          <AppLogo src={process.env.PUBLIC_URL + "/food.svg"} />
+          <Name> Recipe Search </Name>
+        </LogoName>
         <SearchBox>
           <SearchIcon src={process.env.PUBLIC_URL + "/search.svg"} />
           <SearchBoxInput placeholder="Search" onKeyPress={(e) => handler(e)}/>
