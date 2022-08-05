@@ -110,7 +110,7 @@ function App() {
       {/* ***********HEADER*********** */}
       <Header>
         <Name>
-          <AppLogo src="/food.svg" /> 
+          <AppLogo src="homepage/food.svg" /> 
             Recipe Search
         </Name>
         <SearchBox>
