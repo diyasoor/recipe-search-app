@@ -110,11 +110,11 @@ function App() {
       {/* ***********HEADER*********** */}
       <Header>
         <Name>
-          <AppLogo src="homepage/food.svg" /> 
+          <AppLogo src={process.env.PUBLIC_URL + "/food.svg"}/> 
             Recipe Search
         </Name>
         <SearchBox>
-          <SearchIcon src="homepage/search.svg" />
+          <SearchIcon src={process.env.PUBLIC_URL + "/search.svg"} />
           <SearchBoxInput placeholder="Search" onKeyPress={(e) => handler(e)}/>
         </SearchBox>
       </Header>
@@ -122,7 +122,7 @@ function App() {
       <RecipeContainer>
         {recipeList.length ? recipeList.map((recipeObj) => (
           <RecipeComponent recipeObj={recipeObj.recipe}/>
-        )): <Placeholder src="/food.svg" />}  
+        )): <Placeholder src={process.env.PUBLIC_URL + "/food.svg"} />}  
       </RecipeContainer>
     </Container>
   );
