@@ -16,7 +16,6 @@ export const ImageDialog = styled.img`
   object-fit: cover;
 
   @media (min-width:0px) and (max-width:700px) {
-    margin: 0 15px;
     width: 75%;
   }
 `;
@@ -24,11 +23,6 @@ export const ImageDialog = styled.img`
 export const TableDialog = styled.table`
   margin-right: 20px;
   height: 50px;
-
-  @media (min-width:0px) and (max-width:700px) {
-    margin-right: 10px;
-    height: 20px;
-  }
 `;
 
 export const TableData = styled.td`
@@ -39,7 +33,6 @@ export const TableData = styled.td`
   @media (min-width:0px) and (max-width:700px) {
     display: none;
   }
-
 `;
 
 export const TableHeader = styled.th`
@@ -55,6 +48,10 @@ export const TableHeader = styled.th`
 export const DialogList = styled.li`
   margin: 25px 0;
   font-size: 19px;
+  @media (min-width:0px) and (max-width:700px) {
+    margin: 15px 0;
+    font-size: 15px;
+  }
 `;
 
 export const DialogListSpan = styled.span`

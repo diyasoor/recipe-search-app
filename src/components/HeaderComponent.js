@@ -53,8 +53,9 @@ export const SearchBox = styled.div`
   margin-right: 60px;
   
   @media (min-width:0px) and (max-width:700px) {
-    margin-right: 20px;
     border-radius: 5px;
+    width: 30%;
+    margin-right: 10px;
   }
 `;
 export const SearchIcon = styled.img`
@@ -64,8 +65,8 @@ export const SearchIcon = styled.img`
 
   @media (min-width:0px) and (max-width:700px) {
     
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     margin: 0 4px;
   }
 `;
