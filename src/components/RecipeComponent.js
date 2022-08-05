@@ -6,7 +6,7 @@ export const RecipeList = styled.div`
   padding: 10px;
   box-shadow: 4px 3px 8px 1px #969696;
   align-items: center;
-  width: 300px;
+  width: 320px;
 `;
 export const RecipeImage = styled.img`
   height: 200px;
@@ -22,7 +22,7 @@ export const CaloriesIngredients = styled.div`
   justify-content: space-between;
 `;
 export const RecipeCalories = styled.span`
-  font-size: 19px;
+  font-size: 15px;
   color: black;
   margin: 10px 5px;
   border: solid 1px green;
