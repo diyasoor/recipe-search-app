@@ -110,11 +110,11 @@ function App() {
       {/* ***********HEADER*********** */}
       <Header>
         <Name>
-          <AppLogo src="https://github.com/diyasoor/recipe-search-app/blob/master/public/food.svg" /> 
+          <AppLogo src={process.env.PUBLIC_URL + "/food.svg"} /> 
             Recipe Search
         </Name>
         <SearchBox>
-          <SearchIcon src="https://github.com/diyasoor/recipe-search-app/blob/master/public/search.svg" />
+          <SearchIcon src={process.env.PUBLIC_URL + "/search.svg"} />
           <SearchBoxInput placeholder="Search" onKeyPress={(e) => handler(e)}/>
         </SearchBox>
       </Header>
@@ -122,7 +122,7 @@ function App() {
       <RecipeContainer>
         {recipeList.length ? recipeList.map((recipeObj) => (
           <RecipeComponent recipeObj={recipeObj.recipe}/>
-        )): <Placeholder src="https://github.com/diyasoor/recipe-search-app/blob/master/public/food.svg" />}  
+        )): <Placeholder src={process.env.PUBLIC_URL + "/food.svg"} />}  
       </RecipeContainer>
     </Container>
   );
